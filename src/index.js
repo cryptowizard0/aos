@@ -121,6 +121,11 @@ if (argv.watch && argv.watch.length === 43) {
 
 splash()
 
+if (argv['scheduler']) {
+  process.env.SCHEDULER = argv['scheduler']
+  console.log(chalk.yellow('Using SCHEDULER: ') + chalk.blue(process.env.SCHEDULER))
+}
+
 if (argv['relay']) {
   console.log(`\n${chalk.gray('Using Relay:')} ${chalk.yellow(argv['relay'])}`);
   process.env.RELAY_URL = argv['relay']
