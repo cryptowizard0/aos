@@ -40,7 +40,9 @@ import * as os from './commands/os.js'
 import { readHistory, writeHistory } from './services/history-service.js'
 import { pad } from './commands/pad.js'
 
-const argv = minimist(process.argv.slice(2))
+const argv = minimist(process.argv.slice(2), {
+  string: ['scheduler']
+})
 
 let dryRunMode = false
 let luaData = ''
